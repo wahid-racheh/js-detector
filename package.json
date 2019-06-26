@@ -1,0 +1,100 @@
+{
+  "name": "js-detector",
+  "version": "1.0.0",
+  "description": "Real Time Javascript Object Tracker",
+  "keywords": [],
+  "main": "dist/js-detector.umd.js",
+  "module": "dist/js-detector.es5.js",
+  "typings": "dist/types/js-detector.d.ts",
+  "files": [
+    "dist"
+  ],
+  "author": "Wahid RACHEH <wahid.racheh-ext@ekino.com>",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "clean": "rm -rf dist coverage docs .rpt2_cache",
+    "compile": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
+    "build": "npm run clean && npm run compile",
+    "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "test": "jest --coverage",
+    "start": "concurrently \"http-server -a localhost -p 8081\" \"sleepms 1000 && open http://localhost:8081/demo\""
+  },
+  "lint-staged": {
+    "{src,test}/**/*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js",
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testEnvironment": "node",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 95,
+        "lines": 95,
+        "statements": 95
+      }
+    },
+    "collectCoverageFrom": [
+      "src/*.{js,ts}"
+    ],
+    "globals": {
+      "window": true
+    }
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "devDependencies": {
+    "@types/atob": "^2.1.2",
+    "@types/jest": "^23.3.2",
+    "@types/node": "^10.14.10",
+    "atob": "^2.1.2",
+    "concurrently": "^4.1.0",
+    "http-server": "^0.11.1",
+    "husky": "^3.0.0",
+    "isomorphic-fetch": "^2.2.1",
+    "jest": "^24.8.0",
+    "jest-config": "^24.8.0",
+    "lint-staged": "^8.0.0",
+    "prettier": "^1.14.3",
+    "rollup": "^0.67.0",
+    "rollup-plugin-commonjs": "^9.1.8",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-typescript2": "^0.21.2",
+    "sleep-ms": "^2.0.1",
+    "ts-jest": "^23.10.2",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-config-standard": "^8.0.1",
+    "typedoc": "^0.14.2",
+    "typescript": "^3.0.3"
+  }
+}

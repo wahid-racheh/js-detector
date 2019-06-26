@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Object Detection Demo</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../dist/js-detector.umd.js"></script>
+    <script type="text/javascript" src="demo.js"></script>
+  </head>
+
+  <body>
+    <div class="camera__container">
+      <!-- Header -->
+      <div class="camera__header">
+        <span id="camera__header-title" class="camera__header-title">
+          Object Detection Demo
+        </span>
+      </div>
+
+      <!-- Content -->
+      <div class="camera__content">
+        <video class="camera__video" id="video" autoplay></video>
+        <canvas class="camera__canvas" id="canvas"></canvas>
+      </div>
+
+      <!-- Footer -->
+      <div id="camera__footer" class="camera__footer camera__footer--centered">
+        <div id="camera__footer-image" class="camera__footer-image">
+          <img
+            data-ng-show="camera.showFakeImage"
+            id="fake-img"
+            class="fake-img hidden"
+            alt=""
+            src=""
+          />
+          <img id="croppedImg" alt="" src="" />
+        </div>
+
+        <button id="button--camera" class="button button--camera" type="button"></button>
+
+        <button id="button--previous" class="button button--grey button--previous" type="button">
+          Download
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -3,6 +3,10 @@
 js-detector is a minimal javascript library based on **[OpenCv](https://github.com/jcmellado/js-aruco/blob/master/src/cv.js)** .
 It aims to do a real-time object detection using modern HTML5 specifications.
 
+### Live demo
+
+https://js-detector-demo.netlify.com/demo/
+
 ### NPM scripts
 
 - `npm t`: Run test suite

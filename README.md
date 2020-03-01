@@ -1,6 +1,8 @@
 # [js-detector](https://github.com/wahid-racheh/js-detector)
 
-js-detector is a minimal javascript library based on **[OpenCv](https://github.com/jcmellado/js-aruco/blob/master/src/cv.js)** .
+Real Time Javascript Object Tracker
+
+js detector is a minimal javascript library based on **[OpenCv](https://github.com/jcmellado/js-aruco/blob/master/src/cv.js)** .
 It aims to do a real-time object detection using modern HTML5 specifications.
 
 ### Live demo
